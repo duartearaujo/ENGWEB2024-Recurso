@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 var LivroCont = require('../controllers/livros');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
 router.get('/', function(req, res, next) {
   LivroCont.livros_list()
     .then(dados => res.jsonp(dados))
